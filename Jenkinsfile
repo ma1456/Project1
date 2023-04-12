@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	tools {
-	    maven "3.6.3"
+	    maven "3.9.1"
 	 	}
 	stages {
 	    stage('Git CheckOut') {
@@ -23,9 +23,9 @@ pipeline {
             steps {
                rtServer (
                  id: "Artifactory",
-                 url: 'http://localhost:8082/artifactory',
-                 username: 'ravish',
-                  password: 'YouPasswordHere',
+                 url: 'https://manoj1.jfrog.io/artifactory',
+                 username: 'manojvarma',
+                  password: 'Polo@1234',
                   bypassProxy: true,
                    timeout: 300
                         )
@@ -39,7 +39,7 @@ pipeline {
                    "files": [
                       {
                       "pattern": "*.war",
-                      "target": "logic-ops-lab-libs-snapshot-local"
+                      "target": "manojvarma-libs-snapshot-local"
                       }
                             ]
                            }''',
