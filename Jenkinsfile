@@ -39,7 +39,7 @@ pipeline {
                    "files": [
                       {
                       "pattern": "*.jar",
-                      "target": "manoj-jfrog-libs-snapshot-local"
+                      "target": "manoj-jfrog-libs-snapshot-local/"
                       }
                             ]
                            }''',
