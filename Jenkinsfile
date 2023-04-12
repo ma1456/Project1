@@ -23,7 +23,7 @@ pipeline {
             steps {
                rtServer (
                  id: "Artifactory",
-                 url: 'https://manoj1.jfrog.io/artifactory',
+                 url: 'http://manoj1.jfrog.io/artifactory',
                  username: 'manojvarma',
                   password: 'Polo@1234',
                   bypassProxy: true,
