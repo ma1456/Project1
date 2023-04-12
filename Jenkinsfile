@@ -38,7 +38,7 @@ pipeline {
                   spec: '''{
                    "files": [
                       {
-                      "pattern": "*.war",
+                      "pattern": "*.jar",
                       "target": "manojvarma-libs-snapshot-local"
                       }
                             ]
