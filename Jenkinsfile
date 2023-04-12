@@ -6,7 +6,7 @@ pipeline {
 	stages {
 	    stage('Git CheckOut') {
 		    steps {
-			   git branch: 'main', credentialsId: '', url: 'https://github.com/ma1456/JFrog.git'
+			   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ma1456/JFrog.git']])
 			}
 		}
         stage('Clean and Install') {
