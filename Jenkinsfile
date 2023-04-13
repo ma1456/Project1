@@ -1,31 +1,31 @@
 pipeline {
     agent any
 	tools {
-	    maven "3.6.3"
+	    maven "3.9.1"
 	 	}
 	stages {
 	    stage('Git CheckOut') {
 		    steps {
-			   git branch: 'main', credentialsId: '', url: 'https://github.com/ma1456/JFrog.git'
+			   checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ma1456/JFrog.git']])
 			}
 		}
         stage('Clean and Install') {
             steps {
-                bat 'mvn clean install'
+                sh 'mvn clean install'
             }
         }
         stage ('Package'){
             steps {
-                bat 'mvn package'
+                sh 'mvn package'
              }
         }
 	stage ('Server'){
             steps {
                rtServer (
                  id: "Artifactory",
-                 url: 'http://localhost:8082/artifactory',
-                 username: 'ravish',
-                  password: 'YouPasswordHere',
+                 url: 'http://manoj1.jfrog.io/artifactory',
+                 username: 'manojvarma',
+                  password: 'Polo@1234',
                   bypassProxy: true,
                    timeout: 300
                         )
@@ -38,8 +38,8 @@ pipeline {
                   spec: '''{
                    "files": [
                       {
-                      "pattern": "*.war",
-                      "target": "logic-ops-lab-libs-snapshot-local"
+                      "pattern": "*.jar",
+                      "target": "manoj-jfrog-libs-snapshot-local/"
                       }
                             ]
                            }''',
