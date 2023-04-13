@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<DeployRulesServerConfig>
+	<AllowUnusedValues> false </AllowUnusedValues>
+
+	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> fn_entryPointPremiumForBOILERProduct </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> fn_entryPointPremiumForBOILERProduct </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> BOILERPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> BOILERBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+ 	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> calculateCARPremium </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> calculateCARPremium </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> CARPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> CARBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+ 	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> calculateCPMPremium </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> calculateCPMPremium </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> CPMPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> CPMBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> calculateEARPremium </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> calculateEARPremium </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> EARPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> EARBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> fn_entryPointPremiumForEEIProduct </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> fn_entryPointPremiumForEEIProduct </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> EEIPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> EEIBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+	<DeployRulesServiceConfig>
+		<ClassLoadingContextUpdatePolicy> 0 </ClassLoadingContextUpdatePolicy>
+
+		<DeployRulesServiceClientContextFactory>
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> calcPremiumForMBDProduct </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> calcPremiumForMBDProduct </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+
+			<DeployRulesServiceEntryPointConfig>
+				<AlwaysMapObjectsForDefaultModeRuleSets> false </AlwaysMapObjectsForDefaultModeRuleSets>
+				<AlwaysMapPostedObjects> false </AlwaysMapPostedObjects>
+				<EntryPointId> determineMLOPPolicyStatus </EntryPointId>
+
+				<SrlInvocationFunctional>
+					<SrlArgumentType> string </SrlArgumentType>
+					<SrlName> determineMLOPPolicyStatus </SrlName>
+					<SrlReturnType> string </SrlReturnType>
+				</SrlInvocationFunctional>
+
+			</DeployRulesServiceEntryPointConfig>
+
+			<JavaName> com.blazesoft.server.deploy.rules.NdDeployInvokerMapperRulesServiceClientContext </JavaName>
+			<MaxServiceInvocationCount> 1 </MaxServiceInvocationCount>
+		</DeployRulesServiceClientContextFactory>
+
+		<DeploymentType> Java </DeploymentType>
+		<Name> MBDPremiumCalculation </Name>
+		<NumAgents> 5 </NumAgents>
+		<RecyclePolicy> 0 </RecyclePolicy>
+		<RuleExceptionHandlingPolicy> 0 </RuleExceptionHandlingPolicy>
+
+		<RulesServiceAgentFactoryFactory>
+			<JavaName> com.blazesoft.server.rules.NdScriptRulesServiceAgentFactory </JavaName>
+
+			<SerializedRulesProjectLoaderFactory>
+				<JavaName> com.blazesoft.server.rules.NdSerializedRulesProjectFileLoader </JavaName>
+				<Project> MBDMLOPBusinessRMA_service_0.adb </Project>
+				<SerializationMode> 1 </SerializationMode>
+				<UseStream> false </UseStream>
+			</SerializedRulesProjectLoaderFactory>
+
+		</RulesServiceAgentFactoryFactory>
+
+
+		<ServiceAgentReloaderFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserReloaderThread </JavaName>
+		</ServiceAgentReloaderFactory>
+
+
+		<ServiceAgentResetterFactory>
+			<JavaName> com.blazesoft.server.local.NdLocalServiceAgentDispenserResetterThread </JavaName>
+		</ServiceAgentResetterFactory>
+
+
+		<ServiceAgentValueMapperFactory>
+
+			<DeploymentValueMapperConfig>
+				<UseNativeTypesForArrayAndAssociation> false </UseNativeTypesForArrayAndAssociation>
+				<UseNativeTypesForCalendarValues> false </UseNativeTypesForCalendarValues>
+				<UseNativeTypesForMoneyValues> false </UseNativeTypesForMoneyValues>
+				<UseNativeTypesForPrimitiveValues> false </UseNativeTypesForPrimitiveValues>
+			</DeploymentValueMapperConfig>
+
+			<JavaName> com.blazesoft.engines.rules.java.NdRulesJavaValueMapper </JavaName>
+		</ServiceAgentValueMapperFactory>
+
+		<ServiceInvocationsDuringResetPolicy> 0 </ServiceInvocationsDuringResetPolicy>
+
+		<ServiceMgmtBeanFactory>
+			<JavaName> com.blazesoft.server.management.NdDefaultServiceMgmtBean </JavaName>
+
+			<RuleServiceSessionPerformanceMonitorBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionPerformanceMonitorBean </JavaName>
+				<AverageEnabled> false </AverageEnabled>
+				<SingleSessionEnabled> true </SingleSessionEnabled>
+				<MovingAverageEnabled> false </MovingAverageEnabled>
+			</RuleServiceSessionPerformanceMonitorBeanFactory>
+
+
+			<RuleServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultRuleServiceSessionMgmtBean </JavaName>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+			</RuleServiceSessionMgmtBeanFactory>
+
+
+			<ServiceSessionMgmtBeanFactory>
+				<JavaName> com.blazesoft.server.management.NdDefaultServiceSessionMgmtBean </JavaName>
+				<SessionNotificationEnabled> true </SessionNotificationEnabled>
+				<EmitEnabledNotifications> true </EmitEnabledNotifications>
+				<QuestionNotificationEnabled> false </QuestionNotificationEnabled>
+				<PrintNotificationEnabled> false </PrintNotificationEnabled>
+				<UserDefinedNotificationEnabled> false </UserDefinedNotificationEnabled>
+			</ServiceSessionMgmtBeanFactory>
+
+			<ServiceNotificationEnabled> true </ServiceNotificationEnabled>
+		</ServiceMgmtBeanFactory>
+
+
+		<ServiceMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceMonitorFactory>
+
+		<ServiceMonitorThreadGroupMaxPriority> 10 </ServiceMonitorThreadGroupMaxPriority>
+		<ServiceResetExceptionPolicy> 0 </ServiceResetExceptionPolicy>
+		<ServiceResetTimeout> 0 </ServiceResetTimeout>
+
+		<ServiceRuntimeExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceNonThreadedExceptionMulticaster </JavaName>
+		</ServiceRuntimeExceptionMulticasterFactory>
+
+
+		<ServiceSessionMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionPrintLoggingMonitor </JavaName>
+			<LoggerName> 2in1Logger </LoggerName>
+		</ServiceSessionMonitorFactory>
+
+		<ServiceSessionTimeout> 0 </ServiceSessionTimeout>
+		<ServiceThreadGroupMaxPriority> 10 </ServiceThreadGroupMaxPriority>
+
+		<ServiceThreadGroupsExceptionMulticasterFactory>
+			<JavaName> com.blazesoft.server.local.NdServiceThreadGroupsExceptionMulticaster </JavaName>
+		</ServiceThreadGroupsExceptionMulticasterFactory>
+
+
+		<ServiceUserDefinedEventMonitorFactory>
+			<JavaName> com.blazesoft.server.logging.NdServiceSessionUserDefinedEventLoggingMonitor </JavaName>
+			<Enabled> true </Enabled>
+			<LoggerName> 2in1Logger </LoggerName>
+			<LogLevel> ALL </LogLevel>
+		</ServiceUserDefinedEventMonitorFactory>
+
+	</DeployRulesServiceConfig>
+
+	<LogManagerFactory>
+		<DefaultLogLevel> INFO </DefaultLogLevel>
+
+		<FileLogHandlerFactory>
+			<Append> false </Append>
+			<Count> 0 </Count>
+			<FileName> C:/deployments72/precompile/service_log.txt </FileName>
+			<Id> File </Id>
+			<JavaName> com.blazesoft.util.logging.NdFileLogHandler </JavaName>
+			<Limit> 0 </Limit>
+			<LogLevel> ALL </LogLevel>
+			<Pattern> {6} </Pattern>
+		</FileLogHandlerFactory>
+
+		<JavaName> com.blazesoft.util.logging.NdNamedLogManager </JavaName>
+
+		<LogHandlerFactory>
+			<Id> Console </Id>
+			<JavaName> com.blazesoft.util.logging.NdConsoleLogHandler </JavaName>
+			<LogLevel> ALL </LogLevel>
+			<Format> {5}*{6} </Format>
+			<StdOut> true </StdOut>
+		</LogHandlerFactory>
+
+	</LogManagerFactory>
+
+
+	<LoggerConfig>
+		<AllowUnusedValues> false </AllowUnusedValues>
+		<Name> 2in1Logger </Name>
+		<NamedLogHandler> File </NamedLogHandler>
+		<NamedLogHandler> Console </NamedLogHandler>
+	</LoggerConfig>
+
+
+	<LoggerConfig>
+		<AllowUnusedValues> false </AllowUnusedValues>
+		<Name> consoleLogger </Name>
+		<NamedLogHandler> Console </NamedLogHandler>
+	</LoggerConfig>
+
+	<MgmtBeanConfig>  </MgmtBeanConfig>
+	<Name> Engineering </Name>
+
+	<ServerAsyncExceptionMulticasterFactory>
+		<JavaName> com.blazesoft.system.NdAsyncNonThreadedExceptionMulticaster </JavaName>
+	</ServerAsyncExceptionMulticasterFactory>
+
+
+	<ServerFactory>
+		<JavaName> com.icicilombard.engg.Server </JavaName>
+	</ServerFactory>
+
+	<ServerMonitorThreadGroupMaxPriority> 10 </ServerMonitorThreadGroupMaxPriority>
+	<ServerThreadGroupMaxPriority> 10 </ServerThreadGroupMaxPriority>
+
+	<ServiceManagerFactory>
+		<JavaName> com.blazesoft.server.local.NdLocalServiceManager </JavaName>
+	</ServiceManagerFactory>
+
+	<ShutdownOnZeroRefCount> false </ShutdownOnZeroRefCount>
+	<UseCallingContext> false </UseCallingContext>
+</DeployRulesServerConfig>
