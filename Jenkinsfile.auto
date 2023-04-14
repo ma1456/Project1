@@ -4,7 +4,7 @@ pipeline {
 	 maven "3.9.1"
 	}    
     environment {
-        ARTIFACTORY_URL = 'hhttp://manoj1.jfrog.io/artifactory'
+        ARTIFACTORY_URL = 'https://manoj1.jfrog.io/artifactory'
         ARTIFACTORY_REPO = 'engineering'
       }
     stages {
