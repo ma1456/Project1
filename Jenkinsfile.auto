@@ -23,8 +23,7 @@ pipeline {
            steps {
                 // Set up the JFrog CLI
                 sh 'curl -fL https://getcli.jfrog.io | sh'
-		sh 'sudo mv ./jfrog /usr/local/bin'
-                sh 'jfrog rt config --url $ARTIFACTORY_URL --interactive=false'
+                sh 'jfrog rt config add --url $ARTIFACTORY_URL --interactive=false'
                 
                 // Upload artifacts to Artifactory
                 sh "jfrog rt upload --url $ARTIFACTORY_URL --repo $ARTIFACTORY_REPO --recursive target/*"
