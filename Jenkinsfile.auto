@@ -12,7 +12,8 @@ pipeline {
 		   }
         stage('Build') {
            steps {
-              sh 'mvn package'
+              sh 'mvn clean install'
+	      sh 'mvn package'
             }
         }
         stage('Push to Artifactory') {
