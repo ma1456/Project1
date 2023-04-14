@@ -12,7 +12,7 @@ pipeline {
 		   }
         stage('Build') {
            steps {
-              sh 'mvn clen package'
+              sh 'mvn clean package'
             }
         }
         stage('Push to Artifactory') {
