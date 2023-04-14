@@ -22,7 +22,7 @@ pipeline {
         stage('Push to Artifactory') {
            steps {
                 // Set up the JFrog CLI
-                sh 'curl -fL https://getcli.jfrog.io | sh'
+                sh 'curl -fL https://getcli.jfrog.io | sh && sudo mv jfrog /usr/local/bin/'
                 sh 'jfrog config add --url $ARTIFACTORY_URL --interactive=false'
                 
                 // Upload artifacts to Artifactory
