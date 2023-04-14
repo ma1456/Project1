@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+	 maven "3.9.1"
+	}    
     environment {
         ARTIFACTORY_URL = 'hhttp://manoj1.jfrog.io/artifactory'
         ARTIFACTORY_REPO = 'engineering'
