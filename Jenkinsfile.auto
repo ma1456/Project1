@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    environment {
+        ARTIFACTORY_URL = 'hhttp://manoj1.jfrog.io/artifactory'
+        ARTIFACTORY_REPO = 'engineering'
+      }
+    stages {
+        stage('Git CheckOut') {
+		      steps {
+			    checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ma1456/JFrog.git']])
+			    }
+		   }
+        stage('Build') {
+           steps {
+              sh 'mvn clen package'
+            }
+        }
+        stage('Push to Artifactory') {
+           steps {
+                // Set up the JFrog CLI
+                sh 'curl -fL https://getcli.jfrog.io | sh'
+                sh 'jfrog rt config --url $ARTIFACTORY_URL --interactive=false'
+                
+                // Upload artifacts to Artifactory
+                sh "jfrog rt upload --url $ARTIFACTORY_URL --repo $ARTIFACTORY_REPO --recursive target/*"
+            }
+        }
+    }
+}
+
+
+
