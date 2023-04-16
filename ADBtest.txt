@@ -1,3 +1,5 @@
 testing adb movement
 
 testing completed for adb generation.
+
+ADB Movement applicable for all branches.
