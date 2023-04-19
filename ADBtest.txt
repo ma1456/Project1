@@ -1,9 +1,0 @@
-testing adb movement
-
-<<<<<<< HEAD
-Demo to Hadhi
-=======
-testing completed for adb generation.
-
-ADB Movement applicable for all branches.
->>>>>>> 4228e7ae3871dd11bcd169e6d40a61176157b7db
